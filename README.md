@@ -15,11 +15,30 @@ The AI-based Real-time Personalized Mental Health Monitoring System is a cutting
 - VR/AR-based therapeutic content
 - Blockchain-based secure data management
 
+## Core Technology: Ear-Insertable Impedance Sensor
+
+The foundation of our system is an innovative ear-insertable biosensor with frequency-scanning impedance technology that enables high-precision mental health monitoring:
+
+![Ear Sensor Technology](doc/images/ear_sensor_technology.svg)
+
+### Key Features:
+- **Miniature Form Factor**: 3mm diameter, 8mm length design for comfortable, discreet wear
+- **Frequency-Scanning Impedance**: Customized frequency scanning to account for individual physiological differences
+- **Multimodal Measurements**: Simultaneous EEG, body temperature, blood flow, and electrochemical impedance readings
+- **Self-Charging**: Nano energy harvesting technology for extended operation
+- **Edge Processing**: On-device AI preprocessing for immediate anomaly detection
+
+## System Data Flow
+
+The system implements a comprehensive data flow architecture to ensure seamless operation from data collection to treatment delivery:
+
+![Data Flow Diagram](doc/images/data_flow_diagram.svg)
+
 ## Key Features
 
 ### 1. Data Collection Module
 
-- **Ear-insertable Biosensor**: Miniaturized sensor (3mm diameter, 8mm length) for collecting high-fidelity biometric data
+- **Ear-insertable Biosensor**: Miniaturized sensor for collecting high-fidelity biometric data
 - **Frequency-scanning Impedance Technology**: User-specific frequency scanning for personalized biomarker detection
 - **Multimodal Data Collection**: Collects EEG, body temperature, blood flow, electrochemical impedance measurements
 - **Behavioral Pattern Analysis**: Monitors smartphone usage, GPS location, sleep patterns, and social media activity
@@ -64,17 +83,6 @@ The AI-based Real-time Personalized Mental Health Monitoring System is a cutting
 - **Secure Data Sharing**: Consent-based sharing of collected data with professionals
 - **Collaborative Treatment Management**: Integrated system for AI and professional cooperation
 
-## System Architecture
-
-The system follows a modular architecture with six core components interconnected through secure data channels:
-
-1. **Data Collection Module**: Gathers biometric signals, behavioral patterns, emotional states
-2. **AI Analysis & Diagnosis Module**: Processes collected data to diagnose mental health conditions
-3. **Treatment Program Generation Module**: Creates personalized therapeutic interventions
-4. **Treatment Delivery & Monitoring Module**: Delivers treatments and monitors responses
-5. **Data Security & Privacy Module**: Ensures secure data handling and user privacy
-6. **Professional Connection Module**: Facilitates collaboration with mental health professionals
-
 ## Technology Stack
 
 - **Wearable Hardware**: Ultra-compact impedance sensors, nano energy harvesting, edge AI chips
@@ -82,6 +90,38 @@ The system follows a modular architecture with six core components interconnecte
 - **Security**: Blockchain ledger, homomorphic encryption, multi-factor authentication
 - **Therapeutic Delivery**: VR/AR platforms, AI-generated content, real-time adaptation algorithms
 - **Data Processing**: Edge computing, cloud infrastructure, real-time analytics
+
+## Scientific Foundation
+
+This system is built on cutting-edge research in multiple domains:
+
+- **Wearable Biosensors**: Advanced miniaturized sensors for non-invasive physiological monitoring
+- **Biomarker Discovery**: Identification of electrochemical markers for mental health states
+- **AI in Mental Health**: Machine learning approaches for accurate mental health diagnosis
+- **Digital Therapeutics**: Evidence-based digital interventions for mental health conditions
+- **Precision Psychiatry**: Personalized treatment strategies based on individual patient characteristics
+
+## Simulation Environment
+
+A simulation environment is available for testing the system without requiring physical hardware:
+
+```
+./deployment/simulation/app.py
+```
+
+This interactive web interface demonstrates:
+- Biosensor data generation for different mental states
+- AI diagnosis of mental health conditions
+- Personalized treatment plan generation
+- Real-time monitoring and feedback
+
+## Technical Documentation
+
+Detailed documentation is available in the `doc` directory:
+- [System Architecture](doc/system_architecture.md): Comprehensive overview of system components
+- Data Flows: Information flow between system modules
+- Security Protocols: Data protection and privacy safeguards
+- API Specifications: Integration interfaces for external systems
 
 ## Applications
 
@@ -93,3 +133,5 @@ The system follows a modular architecture with six core components interconnecte
 - Research data collection for mental health studies
 
 ## Patent Pending
+
+This system represents innovative technology currently undergoing patent examination.
