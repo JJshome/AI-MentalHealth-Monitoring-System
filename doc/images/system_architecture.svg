@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600">
+    <style>
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -20;
+            }
+        }
+        .module {
+            fill: #f8f8f8;
+            stroke: #333;
+            stroke-width: 2;
+            rx: 15;
+            ry: 15;
+        }
+        .sensor-module { fill: #e6f7ff; }
+        .ai-module { fill: #fff0f5; }
+        .treatment-module { fill: #f0fff0; }
+        .monitoring-module { fill: #fffacd; }
+        .security-module { fill: #f0f8ff; }
+        .expert-module { fill: #fff8dc; }
+        .title {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-anchor: middle;
+        }
+        .module-title {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-anchor: middle;
+        }
+        .feature-text {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            text-anchor: middle;
+        }
+        .data-flow {
+            stroke: #666;
+            stroke-width: 2;
+            fill: none;
+            marker-end: url(#arrowhead);
+            stroke-dasharray: 5;
+            animation: dash 15s linear infinite;
+        }
+        .sensor-flow { stroke: #0099cc; }
+        .ai-flow { stroke: #ff66b2; }
+        .treatment-flow { stroke: #66cc66; }
+        .monitor-flow { stroke: #cccc00; }
+        .security-flow { stroke: #6699ff; }
+        .expert-flow { stroke: #ff9933; }
+        .active-icon {
+            animation: pulse 2s infinite ease-in-out;
+        }
+    </style>
+    
+    <!-- Arrow marker -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+        </marker>
+    </defs>
+    
+    <!-- Title -->
+    <text x="400" y="40" class="title">AI-based Real-time Personalized Mental Health Monitoring System</text>
+    
+    <!-- Data Collection Module -->
+    <rect x="150" y="100" width="200" height="100" class="module sensor-module" />
+    <text x="250" y="125" class="module-title">Data Collection Module</text>
+    <text x="250" y="150" class="feature-text">• Wearable Ear Sensor</text>
+    <text x="250" y="165" class="feature-text">• Impedance Measurements</text>
+    <text x="250" y="180" class="feature-text">• Behavioral Monitoring</text>
+    
+    <!-- AI Analysis Module -->
+    <rect x="450" y="100" width="200" height="100" class="module ai-module" />
+    <text x="550" y="125" class="module-title">AI Analysis &amp; Diagnosis</text>
+    <text x="550" y="150" class="feature-text">• Multimodal Data Integration</text>
+    <text x="550" y="165" class="feature-text">• Deep Learning Classification</text>
+    <text x="550" y="180" class="feature-text">• Predictive Analytics</text>
+    
+    <!-- Treatment Program Module -->
+    <rect x="450" y="250" width="200" height="100" class="module treatment-module" />
+    <text x="550" y="275" class="module-title">Treatment Program Generator</text>
+    <text x="550" y="300" class="feature-text">• Personalized Interventions</text>
+    <text x="550" y="315" class="feature-text">• VR/AR Therapeutic Content</text>
+    <text x="550" y="330" class="feature-text">• AI-Generated Music Therapy</text>
+    
+    <!-- Monitoring Module -->
+    <rect x="150" y="250" width="200" height="100" class="module monitoring-module" />
+    <text x="250" y="275" class="module-title">Monitoring &amp; Feedback</text>
+    <text x="250" y="300" class="feature-text">• Real-time Feedback</text>
+    <text x="250" y="315" class="feature-text">• Progress Tracking</text>
+    <text x="250" y="330" class="feature-text">• AI Chatbot Support</text>
+    
+    <!-- Security Module -->
+    <rect x="150" y="400" width="200" height="100" class="module security-module" />
+    <text x="250" y="425" class="module-title">Data Security &amp; Privacy</text>
+    <text x="250" y="450" class="feature-text">• Blockchain Data Storage</text>
+    <text x="250" y="465" class="feature-text">• Homomorphic Encryption</text>
+    <text x="250" y="480" class="feature-text">• Multi-factor Authentication</text>
+    
+    <!-- Expert Connection Module -->
+    <rect x="450" y="400" width="200" height="100" class="module expert-module" />
+    <text x="550" y="425" class="module-title">Professional Connection</text>
+    <text x="550" y="450" class="feature-text">• AI-assisted Diagnostics</text>
+    <text x="550" y="465" class="feature-text">• VR/AR Remote Consultations</text>
+    <text x="550" y="480" class="feature-text">• Secure Data Sharing</text>
+    
+    <!-- Connection Arrows -->
+    <path d="M 350 150 L 450 150" class="data-flow sensor-flow" />
+    <path d="M 550 200 L 550 250" class="data-flow ai-flow" />
+    <path d="M 450 300 L 350 300" class="data-flow treatment-flow" />
+    <path d="M 250 350 L 250 400" class="data-flow monitor-flow" />
+    <path d="M 350 450 L 450 450" class="data-flow security-flow" />
+    <path d="M 450 350 L 350 350" class="data-flow expert-flow" />
+    
+    <!-- Active Sensor Icon -->
+    <g class="active-icon" transform="translate(170, 120)">
+        <circle cx="10" cy="10" r="5" fill="#0099cc" />
+        <circle cx="10" cy="10" r="8" fill="none" stroke="#0099cc" stroke-width="1" />
+        <circle cx="10" cy="10" r="12" fill="none" stroke="#0099cc" stroke-width="0.5" />
+    </g>
+    
+    <!-- Active AI Processing Icon -->
+    <g class="active-icon" transform="translate(470, 120)">
+        <rect x="5" y="5" width="8" height="8" fill="#ff66b2" />
+        <rect x="5" y="5" width="8" height="8" fill="none" stroke="#ff66b2" stroke-width="1" />
+        <rect x="2" y="2" width="14" height="14" fill="none" stroke="#ff66b2" stroke-width="0.5" />
+    </g>
+    
+    <!-- Footer -->
+    <text x="400" y="550" class="feature-text" style="font-size: 12px; font-weight: bold;">Patent Pending</text>
+</svg>
