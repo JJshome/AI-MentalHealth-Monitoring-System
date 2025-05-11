@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="500" viewBox="0 0 800 500">
+    <style>
+        @keyframes flow {
+            0% { stroke-dashoffset: 24; }
+            100% { stroke-dashoffset: 0; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+        @keyframes processing {
+            0% { fill-opacity: 0.5; }
+            50% { fill-opacity: 0.9; }
+            100% { fill-opacity: 0.5; }
+        }
+        .diagram-title {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-anchor: middle;
+        }
+        .node {
+            fill: #ffffff;
+            stroke: #333333;
+            stroke-width: 2;
+            rx: 10;
+            ry: 10;
+        }
+        .node.user { fill: #e6f7ff; }
+        .node.data { fill: #fff0f5; }
+        .node.ai { fill: #f0fff0; }
+        .node.treatment { fill: #fffacd; }
+        .node.security { fill: #e6e6fa; }
+        .node.expert { fill: #ffe4c4; }
+        .node-title {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-anchor: middle;
+        }
+        .data-flow {
+            fill: none;
+            stroke: #666666;
+            stroke-width: 2.5;
+            stroke-dasharray: 12;
+            animation: flow 2s linear infinite;
+            marker-end: url(#arrowhead);
+        }
+        .data-flow.sensor { stroke: #0099cc; }
+        .data-flow.analysis { stroke: #ff66b2; }
+        .data-flow.treatment { stroke: #66cc66; }
+        .data-flow.feedback { stroke: #cccc00; }
+        .data-flow.security { stroke: #9966ff; }
+        .flow-label {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            text-anchor: middle;
+            fill: #333333;
+        }
+        .node-icon {
+            animation: pulse 3s infinite ease-in-out;
+        }
+        .processing {
+            animation: processing 2s infinite ease-in-out;
+        }
+    </style>
+    
+    <!-- Arrow marker -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#666666" />
+        </marker>
+    </defs>
+    
+    <!-- Title -->
+    <text x="400" y="30" class="diagram-title">Data Flow in Mental Health Monitoring System</text>
+    
+    <!-- Nodes -->
+    <!-- User/Patient Node -->
+    <rect x="50" y="200" width="120" height="80" class="node user" />
+    <text x="110" y="225" class="node-title">User/Patient</text>
+    <circle cx="110" cy="250" r="15" fill="#0099cc" class="node-icon" fill-opacity="0.7" />
+    
+    <!-- Data Collection Node -->
+    <rect x="250" y="100" width="120" height="80" class="node data" />
+    <text x="310" y="125" class="node-title">Data Collection</text>
+    <rect x="290" y="140" width="40" height="25" fill="#ff66b2" class="node-icon" fill-opacity="0.7" rx="5" ry="5" />
+    
+    <!-- AI Analysis Node -->
+    <rect x="450" y="100" width="120" height="80" class="node ai" />
+    <text x="510" y="125" class="node-title">AI Analysis</text>
+    <circle cx="510" cy="150" r="15" fill="#66cc66" class="processing" />
+    
+    <!-- Treatment Node -->
+    <rect x="650" y="200" width="120" height="80" class="node treatment" />
+    <text x="710" y="225" class="node-title">Treatment</text>
+    <polygon points="695,250 725,240 725,260" fill="#cccc00" class="node-icon" fill-opacity="0.7" />
+    
+    <!-- Monitoring Node -->
+    <rect x="450" y="300" width="120" height="80" class="node data" />
+    <text x="510" y="325" class="node-title">Monitoring</text>
+    <rect x="490" y="340" width="40" height="25" fill="#0099cc" class="node-icon" fill-opacity="0.7" rx="5" ry="5" />
+    
+    <!-- Security Node -->
+    <rect x="250" y="300" width="120" height="80" class="node security" />
+    <text x="310" y="325" class="node-title">Data Security</text>
+    <circle cx="310" cy="350" r="15" fill="#9966ff" class="node-icon" fill-opacity="0.7" />
+    
+    <!-- Expert Node -->
+    <rect x="450" y="400" width="120" height="80" class="node expert" />
+    <text x="510" y="425" class="node-title">Healthcare</text>
+    <text x="510" y="445" class="node-title">Professionals</text>
+    <rect x="490" y="460" width="40" height="5" fill="#ff9933" class="node-icon" fill-opacity="0.7" />
+    
+    <!-- Connections -->
+    <!-- User to Data Collection -->
+    <path d="M 170 210 C 200 150, 220 130, 250 130" class="data-flow sensor" />
+    <text x="200" y="155" class="flow-label">Biosensor Data</text>
+    
+    <!-- Data Collection to AI Analysis -->
+    <path d="M 370 140 L 450 140" class="data-flow analysis" />
+    <text x="410" y="130" class="flow-label">Raw Data</text>
+    
+    <!-- AI Analysis to Treatment -->
+    <path d="M 570 140 C 610 150, 640 170, 660 200" class="data-flow treatment" />
+    <text x="630" y="160" class="flow-label">Diagnosis</text>
+    
+    <!-- Treatment to User -->
+    <path d="M 650 240 C 500 255, 200 255, 170 240" class="data-flow treatment" />
+    <text x="400" y="235" class="flow-label">Personalized Treatment</text>
+    
+    <!-- User to Monitoring -->
+    <path d="M 170 240 C 300 290, 400 310, 450 330" class="data-flow feedback" />
+    <text x="290" y="270" class="flow-label">Response Data</text>
+    
+    <!-- Monitoring to AI Analysis -->
+    <path d="M 510 300 L 510 180" class="data-flow analysis" />
+    <text x="525" y="240" class="flow-label">Feedback</text>
+    
+    <!-- Data to Security -->
+    <path d="M 310 180 L 310 300" class="data-flow security" />
+    <text x="325" y="240" class="flow-label">Encryption</text>
+    
+    <!-- Security to Expert -->
+    <path d="M 370 340 C 400 370, 430 400, 450 430" class="data-flow security" />
+    <text x="400" y="370" class="flow-label">Secure Access</text>
+    
+    <!-- Expert to Treatment -->
+    <path d="M 570 430 C 650 420, 700 350, 710 280" class="data-flow treatment" />
+    <text x="670" y="370" class="flow-label">Professional Input</text>
+    
+    <!-- Legend -->
+    <rect x="650" y="30" width="120" height="110" rx="5" ry="5" fill="#f8f8f8" stroke="#333333" stroke-width="1" />
+    <text x="710" y="50" class="node-title" style="font-size: 12px;">Legend</text>
+    
+    <line x1="660" y1="70" x2="680" y2="70" class="data-flow sensor" />
+    <text x="720" y="74" class="flow-label" style="text-anchor: start;">Sensor Data</text>
+    
+    <line x1="660" y1="90" x2="680" y2="90" class="data-flow analysis" />
+    <text x="720" y="94" class="flow-label" style="text-anchor: start;">Analysis</text>
+    
+    <line x1="660" y1="110" x2="680" y2="110" class="data-flow treatment" />
+    <text x="720" y="114" class="flow-label" style="text-anchor: start;">Treatment</text>
+    
+    <line x1="660" y1="130" x2="680" y2="130" class="data-flow security" />
+    <text x="720" y="134" class="flow-label" style="text-anchor: start;">Security</text>
+</svg>
